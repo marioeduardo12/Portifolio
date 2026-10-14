@@ -99,16 +99,21 @@ export function Hero() {
 
           <motion.div
             variants={fadeUp}
-            className="mt-9 flex flex-wrap items-center gap-3"
+            className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
           >
-            <ButtonLink href="#projetos" size="lg">
+            <ButtonLink href="#projetos" size="lg" className="w-full sm:w-auto">
               Ver meus projetos
               <ArrowRight
                 aria-hidden="true"
                 className="size-4 transition-transform duration-300 group-hover/button:translate-x-0.5"
               />
             </ButtonLink>
-            <ButtonLink href="#contato" variant="secondary" size="lg">
+            <ButtonLink
+              href="#contato"
+              variant="secondary"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
               Entrar em contato
             </ButtonLink>
           </motion.div>
@@ -179,7 +184,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8, ease: easeOutQuint }}
-              className="absolute top-[12%] -right-[8%] hidden w-48 sm:block lg:-right-[16%] xl:-right-[24%]"
+              className="absolute top-[12%] -right-[44%] hidden w-44 md:block lg:-right-[16%] lg:w-48 xl:-right-[24%]"
             >
               <div className="rounded-2xl border border-border-strong bg-background/60 p-4 shadow-[0_20px_40px_-24px_rgb(0_0_0/0.9)] backdrop-blur-md">
                 <Quote aria-hidden="true" className="size-4 text-primary-soft" />
@@ -193,7 +198,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.15, duration: 0.8, ease: easeOutQuint }}
-              className="absolute bottom-[10%] -left-[4%] inline-flex items-center gap-2 rounded-full border border-border-strong bg-background/60 py-2 pr-4 pl-3 text-xs text-foreground/85 shadow-[0_20px_40px_-24px_rgb(0_0_0/0.9)] backdrop-blur-md sm:-left-[10%] sm:text-sm"
+              className="absolute bottom-[10%] -left-[4%] inline-flex items-center gap-2 rounded-full border border-border-strong bg-background/60 py-2 pr-4 pl-3 text-xs text-foreground/85 shadow-[0_20px_40px_-24px_rgb(0_0_0/0.9)] backdrop-blur-md sm:-left-[10%] sm:text-sm md:-left-[28%] lg:-left-[10%]"
             >
               <MapPin aria-hidden="true" className="size-4 text-primary-soft" />
               {profile.location}

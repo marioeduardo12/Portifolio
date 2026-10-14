@@ -10,16 +10,31 @@ type StaggerOptions = {
   delayChildren?: number;
 };
 
-/** Seção que surge ao entrar na viewport e revela os filhos `Reveal` em sequência. */
-export function AnimatedSection(props: HTMLMotionProps<"section">) {
+type AnimatedSectionProps = Omit<HTMLMotionProps<"div">, "id"> & {
+  id: string;
+  "aria-labelledby"?: string;
+};
+
+/**
+ * Seção cujo conteúdo surge ao entrar na viewport, revelando os filhos `Reveal` em sequência.
+ * O `id` fica no `<section>` externo, sem transformação, para que a rolagem pelas âncoras
+ * pare na posição final da seção e não na posição deslocada do início da animação.
+ */
+export function AnimatedSection({
+  id,
+  "aria-labelledby": labelledBy,
+  ...props
+}: AnimatedSectionProps) {
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewport}
-      variants={sectionReveal}
-      {...props}
-    />
+    <section id={id} aria-labelledby={labelledBy}>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        variants={sectionReveal}
+        {...props}
+      />
+    </section>
   );
 }
 

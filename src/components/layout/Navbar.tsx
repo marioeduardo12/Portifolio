@@ -75,13 +75,10 @@ export function Navbar() {
       onBlur={handleBlur}
       className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4"
     >
-      <motion.nav
+      <nav
         aria-label="Navegação principal"
-        initial={{ opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: easeOutQuint }}
         className={cn(
-          "relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 rounded-2xl border pr-2.5 pl-4 transition-[background-color,border-color,box-shadow] duration-500 sm:pr-3 sm:pl-5",
+          "relative mx-auto flex h-16 max-w-7xl animate-fade-down items-center justify-between gap-4 rounded-2xl border pr-2.5 pl-4 transition-[background-color,border-color,box-shadow] duration-500 sm:pr-3 sm:pl-5",
           isSolid
             ? "border-border bg-background/75 shadow-[0_18px_40px_-24px_rgb(0_0_0/0.9)] backdrop-blur-xl"
             : "border-transparent",
@@ -166,7 +163,7 @@ export function Navbar() {
             </AnimatePresence>
           </button>
         </div>
-      </motion.nav>
+      </nav>
 
       <AnimatePresence>
         {isMenuOpen && (

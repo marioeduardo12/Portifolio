@@ -1,9 +1,15 @@
+import { Navbar } from "@/components/layout/Navbar";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
+import { Hero } from "@/components/sections/Hero";
+
 export default function Home() {
   return (
-    <main className="grid min-h-svh place-items-center px-6">
-      <h1 className="text-4xl font-bold tracking-tight">
-        Mário <span className="text-gradient">Eduardo</span>
-      </h1>
-    </main>
+    <>
+      <ScrollProgress />
+      <Navbar />
+      <main id="conteudo" tabIndex={-1} className="overflow-x-clip outline-none">
+        <Hero />
+      </main>
+    </>
   );
 }

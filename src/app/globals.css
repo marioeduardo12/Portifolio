@@ -82,6 +82,35 @@
       0 0 0 3px rgb(59 130 246 / 0.16),
       0 0 12px rgb(59 130 246 / 0.8);
   }
+
+  .hero-slab {
+    position: absolute;
+    border-radius: 2rem;
+    border: 1px solid rgb(96 165 250 / 0.14);
+    background-image: linear-gradient(
+      165deg,
+      rgb(59 130 246 / 0.26) 0%,
+      rgb(37 99 235 / 0.08) 42%,
+      transparent 80%
+    );
+    box-shadow: inset 1.5px 0 0 0 rgb(147 197 253 / 0.35);
+    transform: skewX(-24deg);
+  }
+
+  /* Funde a fotografia ao fundo: vinheta elíptica + dissolução na base. */
+  .portrait-mask {
+    --portrait-vignette: radial-gradient(
+      ellipse 56% 60% at 54% 44%,
+      #000 42%,
+      rgb(0 0 0 / 0.7) 66%,
+      transparent 100%
+    );
+    --portrait-fade: linear-gradient(to bottom, #000 58%, transparent 96%);
+    -webkit-mask-image: var(--portrait-vignette), var(--portrait-fade);
+    -webkit-mask-composite: source-in;
+    mask-image: var(--portrait-vignette), var(--portrait-fade);
+    mask-composite: intersect;
+  }
 }
 
 @utility text-gradient {

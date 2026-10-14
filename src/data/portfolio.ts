@@ -28,13 +28,20 @@ import type {
  * Para atualizar textos, experiências, projetos ou tecnologias, edite apenas este arquivo.
  */
 
+const vercelProductionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+
 export const siteConfig = {
   name: "Mário Eduardo",
   title: "Mário Eduardo | Desenvolvedor Full Stack",
   description:
     "Portfólio de Mário Eduardo, Desenvolvedor Full Stack com foco em back-end. Técnico em Informática pelo COTEMIG e estudante de Engenharia de Software na PUC Minas.",
-  /** Defina NEXT_PUBLIC_SITE_URL com o domínio final para gerar URLs absolutas de SEO. */
-  url: process.env.NEXT_PUBLIC_SITE_URL,
+  /**
+   * Domínio final do site, usado nas URLs absolutas de SEO.
+   * Na Vercel é detectado automaticamente; em outros serviços, defina NEXT_PUBLIC_SITE_URL.
+   */
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (vercelProductionUrl ? `https://${vercelProductionUrl}` : undefined),
   locale: "pt_BR",
 };
 

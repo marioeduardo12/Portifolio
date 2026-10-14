@@ -17,7 +17,7 @@ export function TechStack() {
         aria-labelledby="tecnologias-titulo"
         className="panel p-5 sm:p-10 lg:p-14"
       >
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-x-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-x-16">
           <SectionHeading
             id="tecnologias-titulo"
             eyebrow={techSection.eyebrow}

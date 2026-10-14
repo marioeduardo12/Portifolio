@@ -15,7 +15,7 @@ export function StatusBadge({ tone, children, className }: StatusBadgeProps) {
         "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium",
         tone === "progress"
           ? "border-primary/25 bg-primary/10 text-primary-soft"
-          : "border-border-strong bg-white/[0.03] text-foreground/80",
+          : "border-border-strong bg-white/3 text-foreground/80",
         className,
       )}
     >

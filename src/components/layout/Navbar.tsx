@@ -133,7 +133,7 @@ export function Navbar() {
             label={socialLinks.github.label}
             className="hidden sm:inline-grid"
           >
-            <GitHubIcon className="size-[1.125rem]" />
+            <GitHubIcon className="size-4.5" />
           </IconLink>
           <IconLink
             href={socialLinks.linkedin.href}
@@ -150,7 +150,7 @@ export function Navbar() {
             aria-expanded={isMenuOpen}
             aria-controls="menu-mobile"
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-            className="inline-grid size-10 place-items-center rounded-xl border border-border bg-white/[0.02] text-foreground transition-colors duration-300 hover:border-primary/40 hover:bg-primary/10 lg:hidden"
+            className="inline-grid size-10 place-items-center rounded-xl border border-border bg-white/2 text-foreground transition-colors duration-300 hover:border-primary/40 hover:bg-primary/10 lg:hidden"
           >
             <AnimatePresence initial={false} mode="wait">
               <motion.span
@@ -215,7 +215,7 @@ export function Navbar() {
                         "flex items-center justify-between rounded-xl px-4 py-3.5 text-base transition-colors duration-300",
                         isActive
                           ? "bg-primary/10 text-foreground"
-                          : "text-muted hover:bg-white/[0.03] hover:text-foreground",
+                          : "text-muted hover:bg-white/3 hover:text-foreground",
                       )}
                     >
                       {item.label}
@@ -234,7 +234,7 @@ export function Navbar() {
 
             <div className="mt-2 flex items-center gap-2 border-t border-border px-2 pt-3 pb-1">
               <IconLink href={socialLinks.github.href} label={socialLinks.github.label}>
-                <GitHubIcon className="size-[1.125rem]" />
+                <GitHubIcon className="size-4.5" />
               </IconLink>
               <IconLink
                 href={socialLinks.linkedin.href}

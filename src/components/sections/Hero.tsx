@@ -50,7 +50,7 @@ export function Hero() {
     >
       <HeroBackdrop />
 
-      <Container className="grid items-center gap-x-10 gap-y-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
+      <Container className="grid grid-cols-1 items-center gap-x-10 gap-y-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -66,12 +66,12 @@ export function Hero() {
             variants={nameGroup}
             className="mt-5 text-[clamp(3rem,9vw,5.75rem)] leading-[0.95] font-bold tracking-[-0.04em]"
           >
-            <span className="-mt-[0.15em] inline-block overflow-hidden pt-[0.15em] pb-[0.06em] align-bottom">
+            <span className="mt-[-0.15em] inline-block overflow-hidden pt-[0.15em] pb-[0.06em] align-bottom">
               <motion.span variants={nameWord} className="inline-block">
                 {profile.firstName}
               </motion.span>
             </span>{" "}
-            <span className="-mt-[0.15em] inline-block overflow-hidden pt-[0.15em] pb-[0.06em] align-bottom">
+            <span className="mt-[-0.15em] inline-block overflow-hidden pt-[0.15em] pb-[0.06em] align-bottom">
               <motion.span
                 variants={nameWord}
                 className="text-gradient inline-block pr-[0.04em]"
@@ -120,7 +120,7 @@ export function Hero() {
 
           <motion.div variants={fadeUp} className="mt-10 flex items-center gap-2">
             <IconLink href={socialLinks.github.href} label={socialLinks.github.label}>
-              <GitHubIcon className="size-[1.125rem]" />
+              <GitHubIcon className="size-4.5" />
             </IconLink>
             <IconLink
               href={socialLinks.linkedin.href}
@@ -135,13 +135,13 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.3, delay: 0.15, ease: easeOutQuint }}
-          className="relative order-1 mx-auto w-full max-w-[18rem] sm:max-w-[22rem] lg:order-2 lg:max-w-[28rem]"
+          className="relative order-1 mx-auto w-full max-w-[18rem] sm:max-w-88 lg:order-2 lg:max-w-md"
         >
-          <div className="relative aspect-[10/11]">
+          <div className="relative aspect-10/11">
             <motion.div
               aria-hidden="true"
               style={parallax(glowY)}
-              className="absolute -inset-[30%] -z-10 bg-[radial-gradient(closest-side,rgb(59_130_246/0.4),rgb(37_99_235/0.14)_50%,transparent)]"
+              className="absolute inset-[-30%] -z-10 bg-[radial-gradient(closest-side,rgb(59_130_246/0.4),rgb(37_99_235/0.14)_50%,transparent)]"
             />
 
             <motion.div
@@ -152,8 +152,8 @@ export function Hero() {
               transition={{ duration: 1.4, delay: 0.35, ease: easeOutQuint }}
               className="absolute inset-0 -z-10"
             >
-              <span className="hero-slab -left-[14%] top-[8%] h-[80%] w-[46%]" />
-              <span className="hero-slab -top-[10%] -right-[24%] h-[64%] w-[40%] opacity-60" />
+              <span className="hero-slab left-[-14%] top-[8%] h-[80%] w-[46%]" />
+              <span className="hero-slab top-[-10%] right-[-24%] h-[64%] w-[40%] opacity-60" />
             </motion.div>
 
             <div className="portrait-mask absolute inset-0">
@@ -184,7 +184,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8, ease: easeOutQuint }}
-              className="absolute top-[12%] -right-[44%] hidden w-44 md:block lg:-right-[16%] lg:w-48 xl:-right-[24%]"
+              className="absolute top-[12%] right-[-44%] hidden w-44 md:block lg:right-[-16%] lg:w-48 xl:right-[-24%]"
             >
               <div className="rounded-2xl border border-border-strong bg-background/60 p-4 shadow-[0_20px_40px_-24px_rgb(0_0_0/0.9)] backdrop-blur-md">
                 <Quote aria-hidden="true" className="size-4 text-primary-soft" />
@@ -198,7 +198,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.15, duration: 0.8, ease: easeOutQuint }}
-              className="absolute bottom-[10%] -left-[4%] inline-flex items-center gap-2 rounded-full border border-border-strong bg-background/60 py-2 pr-4 pl-3 text-xs text-foreground/85 shadow-[0_20px_40px_-24px_rgb(0_0_0/0.9)] backdrop-blur-md sm:-left-[10%] sm:text-sm md:-left-[28%] lg:-left-[10%]"
+              className="absolute bottom-[10%] left-[-4%] inline-flex items-center gap-2 rounded-full border border-border-strong bg-background/60 py-2 pr-4 pl-3 text-xs text-foreground/85 shadow-[0_20px_40px_-24px_rgb(0_0_0/0.9)] backdrop-blur-md sm:left-[-10%] sm:text-sm md:left-[-28%] lg:left-[-10%]"
             >
               <MapPin aria-hidden="true" className="size-4 text-primary-soft" />
               {profile.location}
@@ -213,9 +213,9 @@ export function Hero() {
 function HeroBackdrop() {
   return (
     <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
-      <div className="bg-grid absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_65%_55%_at_70%_30%,#000_15%,transparent_75%)]" />
-      <div className="absolute -top-48 -right-[15%] size-[48rem] rounded-full bg-[radial-gradient(closest-side,rgb(37_99_235/0.2),transparent)]" />
-      <div className="absolute top-1/3 -left-64 size-[36rem] rounded-full bg-[radial-gradient(closest-side,rgb(59_130_246/0.07),transparent)]" />
+      <div className="bg-grid absolute inset-0 opacity-60 mask-[radial-gradient(ellipse_65%_55%_at_70%_30%,#000_15%,transparent_75%)]" />
+      <div className="absolute -top-48 right-[-15%] size-192 rounded-full bg-[radial-gradient(closest-side,rgb(37_99_235/0.2),transparent)]" />
+      <div className="absolute top-1/3 -left-64 size-144 rounded-full bg-[radial-gradient(closest-side,rgb(59_130_246/0.07),transparent)]" />
     </div>
   );
 }

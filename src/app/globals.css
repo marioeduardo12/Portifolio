@@ -97,6 +97,28 @@
     transform: skewX(-24deg);
   }
 
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition:
+      background-size 0.45s var(--ease-out-quint),
+      color 0.3s ease;
+  }
+
+  .link-underline:focus-visible,
+  a:focus-visible > .link-underline {
+    background-size: 100% 1px;
+  }
+
+  @media (hover: hover) {
+    .link-underline:hover,
+    a:hover > .link-underline {
+      background-size: 100% 1px;
+    }
+  }
+
   .spotlight-layer {
     background-image: radial-gradient(
       28rem circle at var(--spot-x, 50%) var(--spot-y, 0%),

@@ -39,7 +39,7 @@ export function Projects() {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-1.5 rounded-md text-sm font-medium text-primary-soft transition-colors duration-300 hover:text-foreground"
             >
-              Ver todos no GitHub
+              <span className="link-underline">Ver todos no GitHub</span>
               <ArrowUpRight
                 aria-hidden="true"
                 className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -49,7 +49,7 @@ export function Projects() {
           </Reveal>
         </div>
 
-        <RevealList className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <RevealList className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <RevealItem
               key={project.title}
@@ -75,8 +75,8 @@ function FeaturedProjectCard({ project }: { project: Project }) {
   const Icon = project.icon;
 
   return (
-    <SpotlightCard className="h-full bg-linear-to-br from-primary/[0.08] via-surface/80 to-surface/70">
-      <article className="relative grid h-full gap-8 p-6 sm:p-8 md:grid-cols-[minmax(0,1fr)_auto]">
+    <SpotlightCard className="h-full bg-linear-to-br from-primary/8 via-surface/80 to-surface/70">
+      <article className="relative grid h-full grid-cols-1 gap-8 p-6 sm:p-8 md:grid-cols-[minmax(0,1fr)_auto]">
         <div className="flex flex-col">
           <div className="flex flex-wrap items-center gap-3">
             <span className="grid size-12 place-items-center rounded-xl border border-primary/30 bg-primary/15 text-primary-soft">
@@ -126,7 +126,7 @@ function StackOrbit() {
     >
       <div className="absolute inset-0 rounded-full bg-[radial-gradient(closest-side,rgb(59_130_246/0.22),transparent)]" />
       <div className="absolute inset-7 rounded-full border border-dashed border-primary/25" />
-      <div className="absolute inset-[4.75rem] grid place-items-center rounded-full border border-primary/40 bg-primary/15 shadow-[0_0_40px_rgb(59_130_246/0.45)]">
+      <div className="absolute inset-19 grid place-items-center rounded-full border border-primary/40 bg-primary/15 shadow-[0_0_40px_rgb(59_130_246/0.45)]">
         <span className="font-mono text-xs font-semibold tracking-widest text-primary-soft">
           IA
         </span>
@@ -219,10 +219,10 @@ function GitHubCard() {
       href={socialLinks.github.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex h-full min-h-60 flex-col justify-between gap-8 overflow-hidden rounded-2xl border border-dashed border-border-strong p-6 transition-[translate,border-color,background-color] duration-500 ease-out-quint hover:-translate-y-1 hover:border-primary/45 hover:bg-primary/[0.05]"
+      className="group relative flex h-full min-h-60 flex-col justify-between gap-8 overflow-hidden rounded-2xl border border-dashed border-border-strong p-6 transition-[translate,border-color,background-color] duration-500 ease-out-quint hover:-translate-y-1 hover:border-primary/45 hover:bg-primary/5"
     >
       <div className="flex items-start justify-between">
-        <span className="grid size-11 place-items-center rounded-xl border border-border-strong bg-white/[0.03]">
+        <span className="grid size-11 place-items-center rounded-xl border border-border-strong bg-white/3">
           <GitHubIcon className="size-5" />
         </span>
         <ArrowUpRight

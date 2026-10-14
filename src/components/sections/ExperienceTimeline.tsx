@@ -57,7 +57,7 @@ export function ExperienceTimeline() {
         aria-labelledby="experiencia-titulo"
         className="panel p-5 sm:p-10 lg:p-14"
       >
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-x-16">
           <div>
             <div className="lg:sticky lg:top-32">
               <SectionHeading
@@ -74,7 +74,7 @@ export function ExperienceTimeline() {
                   rel="noopener noreferrer"
                   className="group mt-8 inline-flex items-center gap-1.5 rounded-md text-sm font-medium text-primary-soft transition-colors duration-300 hover:text-foreground"
                 >
-                  Ver perfil completo no LinkedIn
+                  <span className="link-underline">Ver perfil completo no LinkedIn</span>
                   <ArrowUpRight
                     aria-hidden="true"
                     className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -88,12 +88,12 @@ export function ExperienceTimeline() {
           <ol ref={timelineRef} className="relative space-y-6">
             <span
               aria-hidden="true"
-              className="absolute top-3 bottom-3 left-[11px] w-px bg-border sm:left-[15px]"
+              className="absolute top-3 bottom-3 left-2.75 w-px bg-border sm:left-3.75"
             />
             <motion.span
               aria-hidden="true"
               style={{ scaleY: shouldReduceMotion ? 1 : lineProgress }}
-              className="absolute top-3 bottom-3 left-[11px] w-px origin-top bg-linear-to-b from-primary-soft via-primary to-primary/10 shadow-[0_0_12px_rgb(59_130_246/0.6)] sm:left-[15px]"
+              className="absolute top-3 bottom-3 left-2.75 w-px origin-top bg-linear-to-b from-primary-soft via-primary to-primary/10 shadow-[0_0_12px_rgb(59_130_246/0.6)] sm:left-3.75"
             />
             {experiences.map((experience) => (
               <TimelineItem
@@ -123,12 +123,12 @@ function TimelineItem({ experience }: { experience: Experience }) {
       <motion.span
         aria-hidden="true"
         variants={markerVariants}
-        className="absolute top-8 left-[6px] grid size-[11px] place-items-center sm:left-[10px]"
+        className="absolute top-8 left-1.5 grid size-2.75 place-items-center sm:left-2.5"
       >
         {isCurrent && (
           <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary/70" />
         )}
-        <span className="relative size-[11px] rounded-full border-2 border-primary-soft bg-background shadow-[0_0_0_4px_var(--color-surface),0_0_16px_rgb(59_130_246/0.85)]" />
+        <span className="relative size-2.75 rounded-full border-2 border-primary-soft bg-background shadow-[0_0_0_4px_var(--color-surface),0_0_16px_rgb(59_130_246/0.85)]" />
       </motion.span>
 
       <motion.article

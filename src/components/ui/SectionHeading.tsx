@@ -25,7 +25,7 @@ export function SectionHeading({
       <Reveal>
         <h2
           id={id}
-          className="mt-5 text-[clamp(1.875rem,3.4vw,2.625rem)] leading-[1.1] font-semibold tracking-[-0.025em] text-balance"
+          className="mt-5 text-[clamp(1.875rem,3.4vw,2.625rem)] leading-[1.1] font-semibold tracking-tight text-balance"
         >
           {title} <span className="text-gradient">{highlight}</span>
         </h2>
